@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for link.js</title>
+    <title>Code coverage report for input.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> link.js</h1>
+        <h1><a href="index.html">All files</a> input.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -83,35 +83,14 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,34 +100,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {useState} from "react"
-const statuses = {
-    HOVER: "hovered",
-    NORMAL: ""
-}
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from "react"
 &nbsp;
-export default function Link({
-    page,
-    children
-}){
-    const [status, setStatus] = useState();
-    return(
-        &lt;a
-            data-testid ="link"
-            href={page || "#"}
-            className = {status}
-            onMouseEnter={() =&gt; {
-                setStatus(statuses.HOVER)
-            }}
+export default function input() {
+    const [input, setInput] = useState("");
+    const [kiir, setKiir] = useState("");
+    return (
+        &lt;div&gt;
+            &lt;input type="text" data-testid="input" value={input} onChange={(event) =&gt; {setInput(event.target.value)}} /&gt;
+            &lt;button data-testid="button" onClick={() =&gt; {
+                    setKiir(input)
+                }}
+            &gt;
+                Kiír
+            &lt;/button&gt;
+            &lt;p data-testid="p"&gt;
+                {kiir.length &gt; 0 &amp;&amp; `${kiir}`}
+            &lt;/p&gt;
+        &lt;/div&gt;
 &nbsp;
-            onMouseLeave={() =&gt; {
-                setStatus(statuses.NORMAL)
-            }}
-&nbsp;
-&nbsp;
-        &gt;
-            {children}
-        &lt;/a&gt;
     )
 }</pre></td></tr></table></pre>
 

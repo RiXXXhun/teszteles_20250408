@@ -1,5 +1,4 @@
-import { useState } from "react"
-
+import {useState} from "react"
 const statuses = {
     HOVER: "hovered",
     NORMAL: ""
@@ -8,20 +7,22 @@ const statuses = {
 export default function Link({
     page,
     children
-}) {
+}){
     const [status, setStatus] = useState();
-
-    return (
+    return(
         <a
-            data-testid="link"
+            data-testid ="link"
             href={page || "#"}
-            className="status"
+            className = {status}
             onMouseEnter={() => {
                 setStatus(statuses.HOVER)
             }}
+
             onMouseLeave={() => {
-                statuses(statuses.NORMAL)
+                setStatus(statuses.NORMAL)
             }}
+
+
         >
             {children}
         </a>
